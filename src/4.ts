@@ -15,12 +15,12 @@ class Person {
 }
 
 abstract class House {
-  door: boolean = false;
-  tenants: Person[] = [];
+  protected door: boolean = false;
+  private tenants: Person[] = [];
 
   constructor(protected key: Key) {}
 
-  comeIn(person: Person) {
+  comeIn(person: Person): void {
     if (this.door) {
       this.tenants.push(person);
     }
